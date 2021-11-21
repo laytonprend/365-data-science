@@ -1,0 +1,15 @@
+import matplotlib.pyplot as plt
+import pandas as pd
+import seaborn as sns
+sns.set()
+df_used_cars= pd.read_csv("C:/Users/layto/OneDrive/Documents/365 datascience/used_cars_bar_chart.csv")
+df_used_cars
+plt.figure(figsize=(9,6))
+plt.bar(x=df_used_cars["Brand"],height=df_used_cars["Cars Listings"],color="midnightblue")
+plt.title("Car listings by brand", fontsize=16)
+plt.ylabel("Car listings", fontsize=13)
+plt.yticks(fontsize=13)
+#color="rgbwymc"
+plt.xticks(rotation=45,fontsize=13)
+plt.show
+plt.savefig("used cars bar.png")
