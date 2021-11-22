@@ -1,0 +1,19 @@
+library("ggplot2")
+df_used_cars <- read.csv(file = "C:/Users/layto/OneDrive/Documents/365 datascience/used_cars_bar_chart.csv",
+                         header = TRUE,
+                         sep = ",")
+
+bar_chart <- ggplot(df_used_cars,
+                    aes( x = ï..Brand,
+                        y = Cars.Listings)) +
+  geom_bar(stat = "identity",
+           width = 0.8,
+           color = "navy",
+           fill = "navy")+
+  ggtitle("Car listings by Brand") +
+  theme_classic() +
+  theme(axis.text.x = element_text(angle = 30,
+                                   hjust=1)) +
+  labs(x = NULL,
+       y = "Number Of Listings")
+bar_chart
